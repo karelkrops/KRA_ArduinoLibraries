@@ -19,8 +19,9 @@ getStatus	KEYWORD2
 getClick	KEYWORD2
 startTimer	KEYWORD2
 stopTimer	KEYWORD2
+isOnTime	KEYWORD2
 isFinish	KEYWORD2
-isFinishAndRestar	KEYWORD2
+isFinishAndRestart	KEYWORD2
 setTimer	KEYWORD2
 addTimer	KEYWORD2
 
