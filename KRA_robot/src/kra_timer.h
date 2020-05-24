@@ -4,8 +4,8 @@
 /**
  * Autor: Karel Kropš
  * pro Kroužek robotiky a automatizace Písek (KRA)
- * verze: 1.1.0
- * datum verze: 23.2.2020
+ * verze: 1.1.1
+ * datum verze: 22.5.2020
  */
 
 /**
@@ -14,6 +14,7 @@
    ve verzi 1.1.0 byla přidána funkce bool isOnTime()
 
 */
+
 
 class KRA_Timer {
   public:
@@ -27,7 +28,7 @@ class KRA_Timer {
     bool isFinishAndRestart(); // stejné jako isFinish(), pouze s opětovném nastartováním časovače
     bool setTimer(unsigned long newTimer); // přenastavení hlavního času časovače
     bool addTimer(unsigned long addTimer); // prodloží čas aktuálně běžícího časovače. Příští start se vrátí do normálu
-  private:
+//  private:
     unsigned long timeStartTimer; // čas startu
     unsigned long timer; // základní nastavení časovače
     unsigned long actualTimer; // dočasné jednorázové nastavení času

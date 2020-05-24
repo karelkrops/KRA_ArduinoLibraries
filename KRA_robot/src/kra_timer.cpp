@@ -29,7 +29,7 @@ bool KRA_Timer::setTimer(unsigned long newTimer) {
 
 bool KRA_Timer::isFinish() {
   if (timeStartTimer) {
-    if ( (timeStartTimer + actualTimer) - millis() > 0xFFFFEFFFU) {
+    if ( (timeStartTimer + actualTimer) - millis() > (((unsigned long)(-1))>>1)) {
       stopTimer();
       return true;
     }
