@@ -28,7 +28,7 @@ class KRA_Timer {
     bool isFinishAndRestart(); // stejné jako isFinish(), pouze s opětovném nastartováním časovače
     bool setTimer(unsigned long newTimer); // přenastavení hlavního času časovače
     bool addTimer(unsigned long addTimer); // prodloží čas aktuálně běžícího časovače. Příští start se vrátí do normálu
-//  private:
+  private:
     unsigned long timeStartTimer; // čas startu
     unsigned long timer; // základní nastavení časovače
     unsigned long actualTimer; // dočasné jednorázové nastavení času
