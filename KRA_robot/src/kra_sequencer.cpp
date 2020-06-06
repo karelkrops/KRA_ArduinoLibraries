@@ -89,8 +89,16 @@ bool KRA_Sequencer::executeItem()
         //        if ((millis() - (unsigned long)commandItem[i].commandTimes) >= commandItem[i].timeWaitingCommand &&
         //                 (commandItem[i].timeActionCommand == 0 ||
         //                  (millis() - (unsigned long)commandItem[i].commandTimes <= commandItem[i].timeActionCommand)))
+
+
         if ((now - (unsigned long)commandItem[i].commandTimes) >= commandItem[i].timeWaitingCommand)
         {
+          /*  debuger
+          if(i==1){
+            commandItem[i].printDebug();
+          Serial.println(String(commandItem[i].timeActionCommand)+ " <= "+ String(commandItem[i].timeWaitingCommand + 1));
+          }
+          */
           if (commandItem[i].timeActionCommand <= commandItem[i].timeWaitingCommand + 1)
           {
             commandItem[i].anNext = true;
@@ -173,7 +181,10 @@ bool KRA_Sequencer::addCommand(String command)
   int i;
   if ((i = findFreeCommand()) > 0)
   {
+//    Serial.println("prijat command: "+String(i)+"="+command);
     commandItem[i] = getCommand(&command);
+    if ((commandItem[i].commandIndex = findCommandIndex(commandItem[i].command)) == -1)
+      commandItem[i].used = false;
     return true;
   }
   return false;
@@ -394,13 +405,13 @@ bool KRA_Sequencer::addSequenc(String sequenc)
 }
 bool KRA_Sequencer::callCommandFunction(KRA_Command *command)
 {
-  //  int commandIndex=command->commandIndex;
-  //  Serial.println("bool KRA_Sequencer::callCommandFunction(" + String(command->commandIndex) + ") used:" + String(command->used ? "true" : "false") + " command:" + command->command + "(" + (command->callCommandStart ? "1" : "0") + "," + (command->callCommandInTime ? "1" : "0") + "," + (command->callCommandStop ? "1" : "0") + "," + String(command->timeActionCommand) + ") times=" + String( millis() - ((unsigned long)command->commandTimes)));
+//    int commandIndex=command->commandIndex;
+//   Serial.println("bool KRA_Sequencer::callCommandFunction(" + String(command->commandIndex) + ") used:" + String((functionSequenc[command->commandIndex] != 0) ? "true" : "false") + "," + String(command->timeActionCommand) + ") times=" + String( millis() - ((unsigned long)command->commandTimes)));
   if (command->commandIndex >= 0 && command->commandIndex < MAX_FUNCTION_BUFFER && functionSequenc[command->commandIndex] != 0)
   {
-    //    Serial.println("#sequncer call command:"+command->command+" vith Value:"+command->commandValue);
+  //      Serial.println("#sequncer call command:"+command->command+" vith Value:"+command->commandValue);
     (functionSequenc[command->commandIndex])(command, command->commandValue);
-    //    Serial.println("#sequncer finish command"+command->command);
+  //      Serial.println("#sequncer finish command"+command->command);
     return true;
   }
   return false;

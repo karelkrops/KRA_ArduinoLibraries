@@ -1,6 +1,6 @@
 {
     "name": "KRA_robot",
-    "version": "1.0.0",
+    "version": "1.0.6",
     "keywords": "KRA, robot, timer, button, PID, average, robot_layer",
     "description": "podpurne tridy pro programovani robotu na krouzku robotizace a automatizace",
     "repository": {

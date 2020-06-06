@@ -5,8 +5,8 @@
 /**
    Autor: Karel Kropš
    pro Kroužek robotiky a automatizace Písek (KRA)
-   verze: 2.0.2
-   datum verze: 23.5.2020
+   verze: 2.0.3
+   datum verze: 07.6.2020
 */
 
 /**
