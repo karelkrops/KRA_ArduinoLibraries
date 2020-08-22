@@ -13,6 +13,8 @@
 #include "kra_button.h"
 #include "kra_freertos_sablona.h"
 #include "kra_sequencer.h"
+#include "CifrixSchedulerConnector.h"
+#include "CifrixScheduler.h"
 
 
 #endif //KRA_ROBOT_H

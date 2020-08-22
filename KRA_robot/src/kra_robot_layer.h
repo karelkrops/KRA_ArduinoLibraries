@@ -26,9 +26,11 @@
 
 //#include <KRA_robot.h>
 #include "kra_freertos_sablona.h"
+#include "CifrixSchedulerConnector.h"
 
 class RobotLayer 
-:public FreeRtosSablona
+:public FreeRtosSablona,
+public CifrixSchedulerConnector
 {
   public:
     enum nameDateRobot {r_speed};
