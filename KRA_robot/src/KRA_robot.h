@@ -15,6 +15,7 @@
 #include "kra_sequencer.h"
 #include "CifrixSchedulerConnector.h"
 #include "CifrixScheduler.h"
+#include "KRA_ControllerPID.h"
 
 
 #endif //KRA_ROBOT_H

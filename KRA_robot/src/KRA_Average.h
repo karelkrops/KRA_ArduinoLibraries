@@ -4,7 +4,7 @@
 /**
  * Autor: Karel Kropš
  * pro Kroužek robotiky a automatizace Písek (KRA)
- * verze: 0.0.1
+ * verze: 0.1.1
  * datum verze: 15.2.2020
  * 
  * Třída je určena k počítání průběžných průměrů
