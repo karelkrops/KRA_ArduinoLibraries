@@ -42,7 +42,7 @@ float KRA_ControllerPID::calcPID(float measuredValue,float requiredValue)
   err = measuredValue - requiredValue;
   errD = err - errD;
   err2D = errD - err2D;
-  regP = err*konstantP*(lastDeltaTimeD/1000);
+  regP = err*konstantP;
   regD = errD*konstantP*konstantD*(lastDeltaTimeD/1000);
   reg2D = err2D*konstantP*konstant2D*((lastDeltaTimeD+lastDeltaTime2D)/2000);
   regI += konstantP*konstantI*(lastDeltaTimeD/1000);
